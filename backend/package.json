@@ -1,0 +1,49 @@
+{
+  "name": "backend2",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start:dev": "rimraf dist && tsc-watch --onSuccess \"npm run watch:server\"",
+    "watch:server": "nodemon --exec ts-node src/index.ts",
+    "start": "node ./dist/index.js",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "prepare": "husky"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.806.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-fileupload": "^1.5.1",
+    "joi": "^17.13.3",
+    "pg": "^8.15.6",
+    "sharp": "^0.34.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.1",
+    "@types/express-fileupload": "^1.5.1",
+    "@types/node": "^22.15.17",
+    "@types/pg": "^8.15.1",
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^6.2.1"
+  },
+  "lint-staged": {
+    "{src,apps,libs,test}/**/*.ts": "eslint --fix"
+  }
+}
