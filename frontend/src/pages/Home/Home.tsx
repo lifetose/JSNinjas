@@ -74,7 +74,7 @@ export default function Home() {
       }
 
       if (currentItem) {
-        await updateItem({ id: currentItem.id, data: formData }).unwrap();
+        await updateItem({ id: currentItem.id, data: formData });
       } else {
         await addItem(formData).unwrap();
       }
