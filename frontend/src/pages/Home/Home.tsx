@@ -87,7 +87,7 @@ export default function Home() {
   };
 
   if (isLoading || isFetching) return <div>Loading...</div>;
-  if (error) return <div>Error: {JSON.stringify(error)}</div>;
+  if (error) return <h3 className='text-red-400'>{getErrorMessage(error)}</h3>;
 
   return (
     <div className='p-6'>
